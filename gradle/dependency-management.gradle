@@ -1,0 +1,12 @@
+apply plugin: "io.spring.dependency-management"
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        // for github dependencies
+        url "https://jitpack.io"
+    }
+}
+
+apply from: "$rootDir/versions.gradle"

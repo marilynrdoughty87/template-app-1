@@ -1,0 +1,21 @@
+buildscript {
+    ext {
+        javaVersion = '1.8'
+        gradleWrapperVersion = '4.4.1'
+        springBootVersion = '1.5.9.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(
+                "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
+        )
+    }
+}
+
+apply from: "$rootDir/gradle/wrapper-version.gradle"
+apply from: "$rootDir/gradle/spring-boot.gradle"
+apply from: "$rootDir/gradle/child-projects.gradle"

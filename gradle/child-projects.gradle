@@ -1,0 +1,16 @@
+evaluationDependsOnChildren()
+childProjects.values().forEach { it.evaluationDependsOnChildren() }
+
+dependencies {
+	childProjects.values().forEach {
+		if (it.plugins.hasPlugin('java')) {
+			runtime it
+		}
+
+		it.childProjects.values().forEach {
+			if (it.plugins.hasPlugin('java')) {
+				runtime it
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+// rootProject.name = 'sample-back'
+
+
+['mods', 'libs', 'tools'].forEach {
+	def dirName = it
+	def dir = new File(rootDir, dirName)
+	if (dir.exists()) {
+		dir.eachDir {
+			include "${dirName}:${it.name}"
+		}
+	}
+}
+
+include "test"
