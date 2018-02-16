@@ -8,5 +8,5 @@ export JAVA_HOME="/opt/jdk"
 
 ls -la
 
-exec java $JAVA_OPTS -jar app.jar
+exec java $JAVA_OPTS -jar boot.jar
 

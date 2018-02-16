@@ -18,7 +18,7 @@ USER app
 
 WORKDIR /app
 
-COPY app.jar /app/app.jar
+COPY boot.jar /app/boot.jar
 RUN mkdir -p /app/.embedpostgresql
 
 EXPOSE 8080

@@ -21,9 +21,9 @@ docker run \
     --volume skeleton-builder-gradle:/app/.gradle \
     ${PROJECT_NAME}-builder || exit 1
 
-cp ${ROOT_DIR}/build/libs/${PROJECT_NAME}.jar ${SCRIPT_DIR}/runner/app.jar || exit 1
+cp ${ROOT_DIR}/boot/build/libs/boot.jar ${SCRIPT_DIR}/runner/boot.jar || exit 1
 
 docker build ${SCRIPT_DIR}/runner \
     --tag ${PROJECT_NAME} || exit 1
 
-rm ${SCRIPT_DIR}/runner/app.jar || exit 1
+rm ${SCRIPT_DIR}/runner/boot.jar || exit 1
