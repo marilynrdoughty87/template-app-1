@@ -1,16 +1,13 @@
-evaluationDependsOnChildren()
-childProjects.values().forEach { it.evaluationDependsOnChildren() }
+rootProject.childProjects.values().collect {
+	it.childProjects.values().collect { it.path }
+}.flatten().forEach {
+	evaluationDependsOn it as String
+}
 
 dependencies {
-	childProjects.values().forEach {
-		if (it.plugins.hasPlugin('java')) {
-			runtime it
-		}
+	runtime rootProject
 
-		it.childProjects.values().forEach {
-			if (it.plugins.hasPlugin('java')) {
-				runtime it
-			}
-		}
-	}
+	runtime rootProject.childProjects.values().collect {
+		it.childProjects.values().findAll { it.plugins.hasPlugin('java-library') }
+	}.flatten()
 }

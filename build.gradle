@@ -17,5 +17,11 @@ buildscript {
 }
 
 apply from: "$rootDir/gradle/wrapper-version.gradle"
-apply from: "$rootDir/gradle/spring-boot.gradle"
-apply from: "$rootDir/gradle/child-projects.gradle"
+apply from: "$rootDir/gradle/java-library.gradle"
+
+dependencies {
+    compile(
+            'org.springframework:spring-context',
+            'org.slf4j:slf4j-api'
+    )
+}

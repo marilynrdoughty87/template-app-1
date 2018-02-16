@@ -1,0 +1,2 @@
+apply from: "$rootDir/gradle/spring-boot.gradle"
+apply from: "$rootDir/gradle/child-projects.gradle"

@@ -1,0 +1,7 @@
+apply from: "$rootDir/gradle/spring-library.gradle"
+
+dependencies {
+	compile(
+			project(':libs:lib-sample'),
+	)
+}

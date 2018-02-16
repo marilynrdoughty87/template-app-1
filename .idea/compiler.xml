@@ -5,8 +5,14 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="boot_main" target="1.8" />
+      <module name="boot_test" target="1.8" />
+      <module name="lib-sample_main" target="1.8" />
+      <module name="lib-sample_test" target="1.8" />
       <module name="mod-common_main" target="1.8" />
       <module name="mod-common_test" target="1.8" />
+      <module name="mod-sample_main" target="1.8" />
+      <module name="mod-sample_test" target="1.8" />
       <module name="template-app-1_main" target="1.8" />
       <module name="template-app-1_test" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,14 +1,14 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <configuration default="false" name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
-        <option name="PATTERN" value="org.jskele.main.*" />
+        <option name="PATTERN" value="app.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="SPRING_BOOT_MAIN_CLASS" value="org.jskele.main.Main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="app.Application" />
     <option name="ALTERNATIVE_JRE_PATH" />
-    <module name="template-app-1_main" />
+    <module name="boot_main" />
     <envs />
     <method />
   </configuration>
