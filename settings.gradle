@@ -1,16 +1,1 @@
-// rootProject.name = 'sample-back'
-
-
-['mods', 'libs', 'tools'].forEach { dirName ->
-	def dir = new File(rootDir, dirName)
-	if (dir.exists()) {
-		dir.eachDir {
-			if (new File(it, 'build.gradle').exists()) {
-				include "${dirName}:${it.name}"
-			}
-		}
-	}
-}
-
 include "boot"
-include "test"

@@ -11,11 +11,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/boot" />
-            <option value="$PROJECT_DIR$/libs" />
-            <option value="$PROJECT_DIR$/libs/lib-sample" />
-            <option value="$PROJECT_DIR$/mods" />
-            <option value="$PROJECT_DIR$/mods/mod-sample" />
-            <option value="$PROJECT_DIR$/test" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
