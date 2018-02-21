@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle/java.gradle"
+apply plugin: "java-library"
+
+dependencies {
+	implementation (
+			"org.springframework:spring-context",
+			"org.slf4j:slf4j-api",
+	)
+}

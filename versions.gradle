@@ -1,10 +1,9 @@
 dependencyManagement {
 	imports {
-		mavenBom("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}") {
-			bomProperty 'spock.version', '1.1-groovy-2.4-rc-4'
-		}
+		mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
 	}
 
 	dependencies {
+		dependency 'com.google.guava:guava:24.0-jre'
 	}
 }

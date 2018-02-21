@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="app-placeholder_main" target="1.8" />
+      <module name="app-placeholder_test" target="1.8" />
       <module name="boot_main" target="1.8" />
       <module name="boot_test" target="1.8" />
       <module name="lib-sample_main" target="1.8" />
