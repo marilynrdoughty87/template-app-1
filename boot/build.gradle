@@ -1,2 +1,28 @@
-apply from: "$rootDir/gradle/spring-boot.gradle"
-apply from: "$rootDir/gradle/child-projects.gradle"
+apply from: "$rootDir/gradle/java.gradle"
+apply plugin: 'org.springframework.boot'
+
+def allOtherProjects = rootProject.allprojects.findAll {
+	it != this.project
+}
+
+// We need to evaluate before we can check for plugins
+allOtherProjects.forEach {
+	evaluationDependsOn it.path
+}
+
+dependencies {
+	runtime allOtherProjects.findAll {
+		// Sometimes when a module is deleted from git, then the existing build artifacts prevent it
+		// from being removed during a pull. Checking for java-library plugin avoids somewhat cryptic
+		// Gradle configuration errors while trying to add a non-java project as a dependency.
+		it.plugins.hasPlugin('java-library')
+	}
+
+	compile(
+			'org.springframework.boot:spring-boot-starter',
+	)
+
+	testCompile(
+			'org.springframework.boot:spring-boot-starter-test',
+	)
+}

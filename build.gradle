@@ -1,12 +1,12 @@
 buildscript {
     ext {
         javaVersion = '1.8'
-        gradleWrapperVersion = '4.4.1'
-        springBootVersion = '1.5.9.RELEASE'
+        gradleWrapperVersion = '4.5.1'
+        springBootVersion = '1.5.10.RELEASE'
     }
 
     repositories {
-        mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -17,11 +17,3 @@ buildscript {
 }
 
 apply from: "$rootDir/gradle/wrapper-version.gradle"
-apply from: "$rootDir/gradle/java-library.gradle"
-
-dependencies {
-    compile(
-            'org.springframework:spring-context',
-            'org.slf4j:slf4j-api'
-    )
-}
