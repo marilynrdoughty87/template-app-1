@@ -9,16 +9,15 @@ docker build ${SCRIPT_DIR}/builder \
     --build-arg GID=$(id -g) \
     --tag ${PROJECT_NAME}-builder || exit 1
 
-docker volume create skeleton-builder-gradle || exit 1
-docker volume create skeleton-builder-embedpostgresql || exit 1
+docker volume create ${PROJECT_NAME}-gradle || exit 1
+docker volume create ${PROJECT_NAME}-embedpostgresql || exit 1
 
 docker run \
-    --net=host \
     --rm \
     --user $(id -u):$(id -g) \
     --volume ${ROOT_DIR}:/app/sources \
-    --volume skeleton-builder-embedpostgresql:/app/.embedpostgresql \
-    --volume skeleton-builder-gradle:/app/.gradle \
+    --volume ${PROJECT_NAME}-embedpostgresql:/app/.embedpostgresql \
+    --volume ${PROJECT_NAME}-gradle:/app/.gradle \
     ${PROJECT_NAME}-builder || exit 1
 
 cp ${ROOT_DIR}/boot/build/libs/boot.jar ${SCRIPT_DIR}/runner/boot.jar || exit 1
