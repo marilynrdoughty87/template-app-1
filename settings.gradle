@@ -1,3 +1,5 @@
+rootProject.name = new File("$rootDir/etc/project-name").text.trim()
+
 include "boot"
 
 rootDir.eachDirMatch ~/^app-.*/, {
